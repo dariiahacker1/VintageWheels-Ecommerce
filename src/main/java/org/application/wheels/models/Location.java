@@ -22,6 +22,21 @@ public class Location {
     private String locationName;
 
     @Nonnull
+    private String address;
+
+    @Nullable
+    private String description;
+
+    @Nullable
+    private String hours;
+
+    @Nullable
+    private String phone;
+
+    @Nullable
+    private String email;
+
+    @Nonnull
     private String userId;
 
     @Nullable

@@ -1,12 +1,10 @@
 package org.application.wheels.models;
 
+import java.util.Map;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
-import lombok.Setter;
-import lombok.Getter;
+import lombok.*;
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Entity
 @Setter
@@ -17,10 +15,13 @@ import lombok.RequiredArgsConstructor;
 public class Car {
     @Nonnull
     @Id
-    private String carId;
+    private int carId;
 
     @Nonnull
     private String model;
+
+    @Nonnull
+    private Map<String, String> properties;
 
     private int price;
 
@@ -32,4 +33,24 @@ public class Car {
 
     @Nullable
     private String locationId;
+
+    @Override
+    public String toString() {
+
+        StringBuilder propertiesString = new StringBuilder();
+
+        properties.forEach((key, value) ->
+            propertiesString.append(key).append(": ").append(value).append(", ")
+        );
+
+        if (propertiesString.isEmpty()) {
+            propertiesString.setLength(propertiesString.length() - 2);
+        }
+
+        return "Car{" +
+                "carId='" + carId + '\'' +
+                ", ownerId=" + sellerId +
+                ", properties={" + propertiesString.toString() +
+                "}}";
+    }
 }

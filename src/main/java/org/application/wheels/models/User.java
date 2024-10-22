@@ -11,6 +11,7 @@ import jakarta.persistence.*;
 @Getter
 @NoArgsConstructor(force = true)
 @RequiredArgsConstructor
+@ToString
 @Table(name= "users")
 public class User {
     @Nonnull
@@ -22,6 +23,9 @@ public class User {
 
     @Nonnull
     private String userName;
+
+    @Nonnull
+    private String phone;
 
     @Nullable
     @OneToMany(mappedBy = "sellerId", cascade= CascadeType.ALL, orphanRemoval = true)

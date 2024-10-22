@@ -47,10 +47,10 @@ public class Car {
             propertiesString.setLength(propertiesString.length() - 2);
         }
 
-        return "Car{" +
+        return "Car(" +
                 "carId='" + carId + '\'' +
                 ", ownerId=" + sellerId +
                 ", properties={" + propertiesString.toString() +
-                "}}";
+                "})";
     }
 }

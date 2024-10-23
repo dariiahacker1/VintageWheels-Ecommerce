@@ -16,7 +16,7 @@ import java.util.List;
 public class Location {
     @Nonnull
     @Id
-    private String locationId;
+    private int locationId;
 
     @Nonnull
     private String locationName;
@@ -37,7 +37,7 @@ public class Location {
     private String email;
 
     @Nonnull
-    private String userId;
+    private int userId;
 
     @Nullable
     @OneToMany(mappedBy = "locationId", cascade = CascadeType.ALL, orphanRemoval = true)

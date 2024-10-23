@@ -45,8 +45,7 @@ public abstract class AbstractDao<T> implements Dao<T> {
     public void deleteAll() {
         List<T> entities = findAll();
 
-        for (T entity : entities)
-            delete(entity);
+        entities.forEach(this::delete);
     }
 
     @Override

@@ -14,8 +14,10 @@ import jakarta.persistence.*;
 @ToString
 @Table(name= "users")
 public class User {
-    @Nonnull
     @Id
+    private int id;
+
+    @Nonnull
     private final String login;
 
     @Nonnull

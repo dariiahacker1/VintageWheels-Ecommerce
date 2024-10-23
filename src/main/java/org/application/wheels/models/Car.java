@@ -29,10 +29,10 @@ public class Car {
     private String description;
 
     @Nonnull
-    private String sellerId;
+    private int sellerId;
 
     @Nullable
-    private String locationId;
+    private int locationId;
 
     @Override
     public String toString() {
